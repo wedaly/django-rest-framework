@@ -224,7 +224,7 @@ class RequestFactory(DjangoRequestFactory):
         if data:
             r.update({
                 'CONTENT_LENGTH': len(data),
-                'CONTENT_TYPE': six.text_type(content_type),
+                'CONTENT_TYPE': six.binary_type(content_type),
                 'wsgi.input': FakePayload(data),
             })
         r.update(extra)
